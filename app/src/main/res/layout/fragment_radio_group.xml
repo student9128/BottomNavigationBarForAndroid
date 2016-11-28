@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <include layout="@layout/fragment_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_200"
+        android:elevation="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/radiobutton_bg_home"
+            android:text="@string/item_home"
+           />
+
+        <RadioButton
+            android:id="@+id/rb_location"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/radiobutton_bg_location"
+            android:text="@string/item_location"/>
+
+        <RadioButton
+            android:id="@+id/rb_like"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/radiobutton_bg_like"
+            android:text="@string/item_like"/>
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/radiobutton_bg_me"
+            android:text="@string/item_person"/>
+
+    </RadioGroup>
+</RelativeLayout>
