@@ -2,22 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_bottom_navigation_bar"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bg_drawer_navigation_one"
         android:title="@string/navigation_navigation_bar"
         />
     <item
         android:id="@+id/menu_radio_group"
-        android:icon="@mipmap/ic_launcher"
+        android:actionLayout="@layout/drawer_navigation_badge"
+        android:icon="@drawable/bg_drawer_navigation_two"
         android:title="@string/navigation_radio_bar"
         />
     <item
         android:id="@+id/menu_view_pager"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bg_drawer_navigation_three"
         android:title="@string/navigation_view_pager"
         />
     <item
         android:id="@+id/menu_text_view"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bg_drawer_navigation_four"
         android:title="@string/navigation_text_view"
         />
 </menu>

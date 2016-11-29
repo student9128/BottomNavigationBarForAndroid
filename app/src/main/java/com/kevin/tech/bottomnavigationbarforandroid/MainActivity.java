@@ -11,12 +11,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.NavigationFragment;
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.RadioFragment;
+import com.kevin.tech.bottomnavigationbarforandroid.fragment.ViewPagerFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private DrawerLayout mDrawerLayout;
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mDrawerToggle;
     private NavigationFragment mNavigationFragment;
     private RadioFragment mRadioFragment;
+    private LinearLayout mRadioBadge;//the badge for radioGroup menu
+    private TextView mRadioMsg;
+    private ViewPagerFragment mViewPagerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +54,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         headerView.setOnClickListener(this);
         mNavigationView.setItemIconTintList(null);
         mNavigationView.setNavigationItemSelectedListener(this);
+        mNavigationView.setItemTextColor(ContextCompat.getColorStateList(this, R.color.bg_drawer_navigation));
+        mNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, R.color.bg_drawer_navigation));
+//        mRadioBadge = (LinearLayout) mNavigationView.getMenu().findItem(R.id.menu_radio_group).getActionView();
+//        mRadioMsg = (TextView) mRadioBadge.findViewById(R.id.msg);
+//        mRadioMsg.setText("8");
+        setNavigationViewChecked(0);
         setCurrentFragment();
+
+    }
+
+    private void setNavigationViewChecked(int position) {
+        mNavigationView.getMenu().getItem(position).setChecked(true);
+        Log.i("Kevin", "the count of menu item is--->" + mNavigationView.getMenu().size() + "");
+        for (int i = 0; i < mNavigationView.getMenu().size(); i++) {
+            if (i != position) {
+                mNavigationView.getMenu().getItem(i).setChecked(false);
+            }
+        }
     }
 
     private void setCurrentFragment() {
@@ -66,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 transaction.replace(R.id.frame_content, mNavigationFragment);
                 Snackbar.make(mDrawerLayout, "NavigationBar", Snackbar.LENGTH_SHORT).show();
+                setNavigationViewChecked(0);
                 break;
             case R.id.menu_radio_group:
                 if (mRadioFragment == null) {
@@ -73,11 +98,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 transaction.replace(R.id.frame_content, mRadioFragment);
                 Snackbar.make(mDrawerLayout, "RadioGroup", Snackbar.LENGTH_SHORT).show();
+                setNavigationViewChecked(1);
                 break;
             case R.id.menu_view_pager:
+                if (mViewPagerFragment == null) {
+                    mViewPagerFragment = ViewPagerFragment.newInstance(getString(R.string.navigation_view_pager));
+                }
+                transaction.replace(R.id.frame_content, mViewPagerFragment);
                 Snackbar.make(mDrawerLayout, "ViewPager", Snackbar.LENGTH_SHORT).show();
+                setNavigationViewChecked(2);
                 break;
             case R.id.menu_text_view:
+                setNavigationViewChecked(3);
                 Snackbar.make(mDrawerLayout, "TextView", Snackbar.LENGTH_SHORT).show();
                 break;
 
