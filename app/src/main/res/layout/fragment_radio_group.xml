@@ -23,9 +23,10 @@
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/radiobutton_style"
+            android:checked="true"
             android:drawableTop="@drawable/radiobutton_bg_home"
             android:text="@string/item_home"
-           />
+            />
 
         <RadioButton
             android:id="@+id/rb_location"
