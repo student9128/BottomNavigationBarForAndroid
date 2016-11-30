@@ -9,4 +9,5 @@
     <color name="grey_300">#E0E0E0</color>
     <color name="black">#000000</color>
     <color name="black_1">#333333</color>
+    <color name="amber">#BBFFC107</color>
 </resources>
