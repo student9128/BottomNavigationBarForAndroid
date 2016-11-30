@@ -99,7 +99,7 @@ public class TextTabFragment extends Fragment implements View.OnClickListener {
     }
 
     private void switchFrgment(int i) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         switch (i) {
             case 0:
                 if (mHomeFragment == null) {

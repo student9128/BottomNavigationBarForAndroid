@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.NavigationFragment;
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.RadioFragment;
+import com.kevin.tech.bottomnavigationbarforandroid.fragment.TabLayoutFragment;
+import com.kevin.tech.bottomnavigationbarforandroid.fragment.TabLayoutFragment2;
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.TextTabFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -31,7 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RadioFragment mRadioFragment;
     private LinearLayout mRadioBadge;//the badge for radioGroup menu
     private TextView mRadioMsg;
-    private TextTabFragment mViewPagerFragment;
+    private TextTabFragment mTextTabFragment;
+    private TabLayoutFragment mTabLayoutFragment;
+    private TabLayoutFragment2 mTabLayoutFragment2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,18 +104,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Snackbar.make(mDrawerLayout, "RadioGroup", Snackbar.LENGTH_SHORT).show();
                 setNavigationViewChecked(1);
                 break;
-            case R.id.menu_view_pager:
-                if (mViewPagerFragment == null) {
-                    mViewPagerFragment = TextTabFragment.newInstance(getString(R.string.navigation_text_tab));
+            case R.id.menu_text_view:
+                if (mTextTabFragment == null) {
+                    mTextTabFragment = TextTabFragment.newInstance(getString(R.string.navigation_text_tab));
                 }
-                transaction.replace(R.id.frame_content, mViewPagerFragment);
-                Snackbar.make(mDrawerLayout, "ViewPager", Snackbar.LENGTH_SHORT).show();
+                transaction.replace(R.id.frame_content, mTextTabFragment);
+                Snackbar.make(mDrawerLayout, "TextView + LinearLayout", Snackbar.LENGTH_SHORT).show();
                 setNavigationViewChecked(2);
                 break;
-            case R.id.menu_text_view:
+            case R.id.menu_tab_layout:
+                if(mTabLayoutFragment == null){
+                mTabLayoutFragment = TabLayoutFragment.newInstance(getString(R.string.navigation_tab_layout));
+                }
+                transaction.replace(R.id.frame_content, mTabLayoutFragment);
                 setNavigationViewChecked(3);
-                Snackbar.make(mDrawerLayout, "TextView", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(mDrawerLayout, "TabLayout + ViewPager", Snackbar.LENGTH_SHORT).show();
                 break;
+            case R.id.menu_tab_layout2:
+                if (mTabLayoutFragment2 == null) {
+                    mTabLayoutFragment2 = TabLayoutFragment2.newInstance(getString(R.string.navigation_tab_layout2));
+                }
+                transaction.replace(R.id.frame_content, mTabLayoutFragment2);
+                setNavigationViewChecked(4);
+                Snackbar.make(mDrawerLayout, "TabLayout + ViewPager 2", Snackbar.LENGTH_SHORT).show();
+                break;
+
 
         }
         mDrawerLayout.closeDrawers();

@@ -33,6 +33,8 @@
         <item name="android:padding">5dp</item>
         <item name="android:textColor">@color/black_1</item>
     </style>
-    -->
+    <style name="tabTextSizeStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
 
 </resources>

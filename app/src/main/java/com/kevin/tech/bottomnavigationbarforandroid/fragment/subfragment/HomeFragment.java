@@ -14,7 +14,7 @@ import com.kevin.tech.bottomnavigationbarforandroid.R;
 /**
  * Created by Kevin on 2016/11/28.
  * Blog:http://blog.csdn.net/student9128
- * Description:
+ * Description: HomeFragment
  */
 
 public class HomeFragment extends Fragment{
