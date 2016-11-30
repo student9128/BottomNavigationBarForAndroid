@@ -14,7 +14,7 @@
     <item
         android:id="@+id/menu_view_pager"
         android:icon="@drawable/bg_drawer_navigation_three"
-        android:title="@string/navigation_view_pager"
+        android:title="@string/navigation_text_tab"
         />
     <item
         android:id="@+id/menu_text_view"

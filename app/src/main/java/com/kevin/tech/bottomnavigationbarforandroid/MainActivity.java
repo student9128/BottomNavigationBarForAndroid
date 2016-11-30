@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.NavigationFragment;
 import com.kevin.tech.bottomnavigationbarforandroid.fragment.RadioFragment;
-import com.kevin.tech.bottomnavigationbarforandroid.fragment.ViewPagerFragment;
+import com.kevin.tech.bottomnavigationbarforandroid.fragment.TextTabFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private DrawerLayout mDrawerLayout;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RadioFragment mRadioFragment;
     private LinearLayout mRadioBadge;//the badge for radioGroup menu
     private TextView mRadioMsg;
-    private ViewPagerFragment mViewPagerFragment;
+    private TextTabFragment mViewPagerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.menu_view_pager:
                 if (mViewPagerFragment == null) {
-                    mViewPagerFragment = ViewPagerFragment.newInstance(getString(R.string.navigation_view_pager));
+                    mViewPagerFragment = TextTabFragment.newInstance(getString(R.string.navigation_text_tab));
                 }
                 transaction.replace(R.id.frame_content, mViewPagerFragment);
                 Snackbar.make(mDrawerLayout, "ViewPager", Snackbar.LENGTH_SHORT).show();

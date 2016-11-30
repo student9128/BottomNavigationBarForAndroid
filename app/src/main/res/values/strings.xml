@@ -8,7 +8,7 @@
     <string name="navigation_navigation_bar">NavigationBar</string>
     <string name="navigation_radio_bar">RadioGroup</string>
     <string name="navigation_text_view">TextView</string>
-    <string name="navigation_view_pager">ViewPager</string>
+    <string name="navigation_text_tab">TextView + LinearLayout</string>
     <string name="navigation_tab_host">TabHost</string>
 
     <string name="item_home">Home</string>
