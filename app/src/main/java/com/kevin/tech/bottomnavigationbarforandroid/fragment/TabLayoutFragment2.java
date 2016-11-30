@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,10 +73,11 @@ public class TabLayoutFragment2 extends Fragment implements TabLayout.OnTabSelec
 //        }
         mTabLayout.addOnTabSelectedListener(this);
 //        mViewPager.setCurrentItem(0);
-        mTabLayout.getTabAt(0).setIcon(R.drawable.home);
+        mTabLayout.getTabAt(0).setIcon(R.drawable.home_fill);
         mTabLayout.getTabAt(1).setIcon(R.drawable.location);
         mTabLayout.getTabAt(2).setIcon(R.drawable.like);
         mTabLayout.getTabAt(3).setIcon(R.drawable.person);
+//        resetTabIcon();
 //        setDefaultFragment();
         return view;
     }
@@ -118,6 +120,31 @@ public class TabLayoutFragment2 extends Fragment implements TabLayout.OnTabSelec
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
 //        setTabSelectedState(tab);
+        resetTabIcon();
+        int position = tab.getPosition();
+        Log.e("Kevin", "position--->" + position);
+        switch (position) {
+            case 0:
+                tab.setIcon(R.drawable.home_fill);
+                break;
+            case 1:
+                tab.setIcon(R.drawable.location_fill);
+                break;
+            case 2:
+                tab.setIcon(R.drawable.like_fill);
+                break;
+            case 3:
+                tab.setIcon(R.drawable.person_fill);
+                break;
+
+        }
+    }
+
+    private void resetTabIcon() {
+        mTabLayout.getTabAt(0).setIcon(R.drawable.home);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.location);
+        mTabLayout.getTabAt(2).setIcon(R.drawable.like);
+        mTabLayout.getTabAt(3).setIcon(R.drawable.person);
     }
 
     @Override
