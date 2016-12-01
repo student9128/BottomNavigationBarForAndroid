@@ -5,4 +5,9 @@
         android:id="@+id/settings"
         android:title="settings"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/share"
+        android:title="Share"
+        android:icon="@drawable/libra_selected"
+        app:showAsAction="always"/>
 </menu>
