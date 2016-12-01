@@ -13,6 +13,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>
 
     <style name="radiobutton_style">
@@ -33,6 +35,7 @@
         <item name="android:padding">5dp</item>
         <item name="android:textColor">@color/black_1</item>
     </style>
+
     <style name="tabTextSizeStyle">
         <item name="android:textSize">12sp</item>
     </style>
@@ -62,9 +65,22 @@
               but setting this also changes the popup menu's background,
               even if we define popupTheme for our <Toolbar> -->
         <!-- <item name="android:background">@color/color_primary</item> -->
-        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+
     </style>
+
+    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <!-- 弹出层背景颜色 -->
+        <item name="android:popupBackground">@color/colorPrimary</item>
+        <!-- 弹出层垂直方向上的偏移，即在竖直方向上距离Toolbar的距离，值为负则会盖住Toolbar -->
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <!-- 弹出层水平方向上的偏移，即距离屏幕左边的距离，负值会导致右边出现空隙 -->
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+    </style>
+
     <style name="MenuTextStyle">
         <item name="android:textSize">24sp</item>
     </style>
+
 </resources>
