@@ -7,8 +7,8 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/libra"
-        android:title="libra"
-        android:icon="@drawable/libra_selected"
+        android:title="notification"
+        android:icon="@drawable/notification"
         app:showAsAction="always"/>
     <item
         android:id="@+id/share"

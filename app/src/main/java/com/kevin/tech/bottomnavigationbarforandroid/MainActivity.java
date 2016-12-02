@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 transaction.replace(R.id.frame_content, mRadioFragment);
 //                Snackbar.make(mDrawerLayout, "RadioGroup", Snackbar.LENGTH_SHORT).show();
-                SnackBarUtils.showSnackBar(mDrawerLayout,getString(R.string.navigation_radio_bar),this);
+                SnackBarUtils.showSnackBar(mDrawerLayout, getString(R.string.navigation_radio_bar), this);
                 setNavigationViewChecked(1);
                 break;
             case R.id.menu_text_view:
