@@ -37,10 +37,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextTabFragment mTextTabFragment;
     private TabLayoutFragment mTabLayoutFragment;
     private TabLayoutFragment2 mTabLayoutFragment2;
+    private NightModeHelper mNightModeHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        mNightModeHelper = new NightModeHelper(this, R.style.BaseTheme);
         setContentView(R.layout.activity_main);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mToolbar = (Toolbar) findViewById(R.id.tool_bar);
@@ -157,6 +160,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             case R.id.settings:
                 Snackbar.make(mDrawerLayout, "Settings", Snackbar.LENGTH_SHORT).show();
+                return true;
+            case R.id.share:
+                mNightModeHelper.toggle();
+//                Configuration newConfig = new Configuration(getResources().getConfiguration());
+//                newConfig.uiMode &= ~Configuration.UI_MODE_NIGHT_MASK;
+//                newConfig.uiMode |= uiNightMode;
+//                getResources().updateConfiguration(newConfig, null);
+//                recreate();
                 return true;
         }
         return super.onOptionsItemSelected(item);

@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/group_bottom_naviagtion">
-    <item
-        android:id="@+id/menu_bottom_navigation_bar"
-        android:icon="@drawable/bg_drawer_navigation_one"
-        android:title="@string/navigation_navigation_bar"
-        />
-    <item
-        android:id="@+id/menu_radio_group"
-        android:actionLayout="@layout/drawer_navigation_badge"
-        android:icon="@drawable/bg_drawer_navigation_two"
-        android:title="@string/navigation_radio_bar"
-        />
-    <item
-        android:id="@+id/menu_text_view"
-        android:icon="@drawable/bg_drawer_navigation_three"
-        android:title="@string/navigation_text_tab"
-        />
-    <item
-        android:id="@+id/menu_tab_layout"
-        android:icon="@drawable/bg_drawer_navigation_four"
-        android:title="@string/navigation_tab_layout"
-        />
+        <item
+            android:id="@+id/menu_bottom_navigation_bar"
+            android:icon="@drawable/bg_drawer_navigation_one"
+            android:title="@string/navigation_navigation_bar"
+            />
+        <item
+            android:id="@+id/menu_radio_group"
+            android:actionLayout="@layout/drawer_navigation_badge"
+            android:icon="@drawable/bg_drawer_navigation_two"
+            android:title="@string/navigation_radio_bar"
+            />
+        <item
+            android:id="@+id/menu_text_view"
+            android:icon="@drawable/bg_drawer_navigation_three"
+            android:title="@string/navigation_text_tab"
+            />
+        <item
+            android:id="@+id/menu_tab_layout"
+            android:icon="@drawable/bg_drawer_navigation_four"
+            android:title="@string/navigation_tab_layout"/>
+        <item
+            android:id="@+id/menu_tab_host"
+            android:icon="@drawable/tab_host"
+            android:title="@string/navigation_tab_host"
+            />
     </group>
     <item
         android:id="@+id/menu_tab_layout2"

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Navigation</string>
+    <string name="drawer_layout_open">Open</string>
+    <string name="drawer_layout_close">Close</string>
+    <string name="blog_site">Blog:http://blog.csdn.net/student9128</string>
+    <string name="nick_name">Kevin</string>
+    <string name="tips">Hello</string>
+    <string name="navigation_navigation_bar">NavigationBar</string>
+    <string name="navigation_radio_bar">RadioGroup</string>
+    <string name="navigation_tab_layout">TabLayout + ViewPager</string>
+    <string name="navigation_tab_layout2">TabLayout + ViewPager 2</string>
+    <string name="navigation_text_tab">TextView + LinearLayout</string>
+    <string name="navigation_tab_host">TabHost</string>
+
+    <string name="item_home">Home</string>
+    <string name="item_location">Location</string>
+    <string name="item_like">Like</string>
+    <string name="item_person">Me</string>
+</resources>

@@ -112,6 +112,7 @@ public class NavigationFragment extends Fragment implements BottomNavigationBar.
                     mPersonFragment = PersonFragment.newInstance(getString(R.string.item_person));
                 }
                 beginTransaction.replace(R.id.sub_content, mPersonFragment);
+                break;
         }
         beginTransaction.commit();
 

@@ -98,6 +98,10 @@ public class TextTabFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     * switch the fragment accordting to id
+     * @param i id
+     */
     private void switchFrgment(int i) {
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         switch (i) {
